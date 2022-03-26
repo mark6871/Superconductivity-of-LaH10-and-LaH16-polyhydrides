@@ -1,0 +1,70 @@
+PARAMETERS EVOLUTIONARY ALGORITHM
+***************************************
+***************************************
+*        TYPE OF RUN AND SYSTEM       *
+***************************************
+***************************************
+USPEX      : calculationMethod
+301        : calculationType
+1          : AutoFrac
+ 
+%optType
+1
+%endOptType
+
+% symmetries
+2-230
+% endSymmetries
+
+% atomType
+La H
+% EndAtomType
+
+% numSpecies
+1 0
+0 1
+% EndNumSpecies
+
+11    : firstGeneMax 
+8     : minAt 
+16    : maxAt 
+
+***************************************
+*             POPULATION              *
+***************************************
+100         : populationSize
+100        : initialPopSize
+100         : numGenerations
+30         : stopCrit
+1          : reoptOld
+
+***************************************
+*        VARIATION OPERATORS          *
+***************************************
+0.4        : fracGene
+0.2        : fracRand
+0.2        : fracAtomsMut
+0.2        : fracTrans
+0.0        : fracRotMut
+0.0        : fracLatMut
+0.0        : fracPerm
+
+***************************************
+*   DETAILS OF ABINITIO CALCULATION   *
+***************************************
+% abinitioCode
+1 1 1 1 1
+% ENDabinit
+
+% KresolStart
+0.13 0.11 0.09 0.07 0.05
+% Kresolend
+
+% commandExecutable
+mpirun -np 8 vasp > out
+% EndExecutable
+
+25         : numParallelCalcs
+QSH        : whichCluster
+150.0       : ExternalPressure
+
